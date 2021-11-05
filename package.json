@@ -1,0 +1,38 @@
+{
+  "name": "jest-coverage-action",
+  "version": "1.0.0",
+  "description": "A simple github action to check PR jest coverage",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --bundle --platform=node --outfile=dist/index.js",
+    "version": "npm run build",
+    "postversion": "git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y-nk/jest-report-action.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "pull-request",
+    "jest",
+    "coverage"
+  ],
+  "author": "Julien Barbay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/y-nk/jest-report-action/issues"
+  },
+  "homepage": "https://github.com/y-nk/jest-report-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^5.0.0",
+    "istanbul-lib-coverage": "^3.2.0",
+    "markdown-table": "^3.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.13.8"
+  }
+}
